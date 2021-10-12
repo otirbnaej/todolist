@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Btn } from './styles';
-
 function Button({ children, onClick }) {
-	return <Btn onClick={onClick}>{children}</Btn>;
+	return <button onClick={onClick}>{children}</button>;
 }
 
 export default Button;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from './Button';
-import { AddTaskConteiner, Input } from './styles';
+import { AddTaskConteiner, Input, Btn } from './styles';
 
 function AddTask({ handleTaskAddition }) {
 	const [inputData, setInputData] = useState('');
@@ -18,7 +18,10 @@ function AddTask({ handleTaskAddition }) {
 	return (
 		<AddTaskConteiner>
 			<Input onChange={handleInputChange} value={inputData} type='text' />
-			<Button onClick={handleAddTaskClick}>Adicionar Tarefa</Button>
+
+			<Btn>
+				<Button onClick={handleAddTaskClick}>Adicionar Tarefa</Button>
+			</Btn>
 		</AddTaskConteiner>
 	);
 }

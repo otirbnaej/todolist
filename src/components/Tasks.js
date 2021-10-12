@@ -1,11 +1,16 @@
 import React from 'react';
 import Task from './Task';
 
-function Tasks({ tasks, handleTaskClick }) {
+function Tasks({ tasks, handleTaskClick, handleTaskDeletion }) {
 	return (
 		<>
 			{tasks.map(task => (
-				<Task key={task.id} task={task} handleTaskClick={handleTaskClick} />
+				<Task
+					key={task.id}
+					task={task}
+					handleTaskClick={handleTaskClick}
+					handleTaskDeletion={handleTaskDeletion}
+				/>
 			))}
 		</>
 	);
