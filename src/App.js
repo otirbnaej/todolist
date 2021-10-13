@@ -32,22 +32,23 @@ function App() {
 	};
 
 	const handleTaskAddition = taskTitle => {
-		const newTasks = [
-			...tasks,
-			{
-				title: taskTitle,
-				id: uuidv4(),
-				completed: false,
-			},
-		];
+		if (taskTitle) {
+			const newTasks = [
+				...tasks,
+				{
+					title: taskTitle,
+					id: uuidv4(),
+					completed: false,
+				},
+			];
 
-		setTasks(newTasks);
+			setTasks(newTasks);
+		}
 	};
 
 	const handleTaskDeletion = async taskId => {
 		const newTasks = await tasks.filter(task => task.id !== taskId);
 		setTasks(newTasks);
-		console.log(typeof newTasks, 'novasTasks');
 	};
 
 	return (
